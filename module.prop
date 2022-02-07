@@ -1,6 +1,7 @@
 id=Twemoji-systemless
 name=Twemoji
-version=v13.1.0
-versionCode=31
+version=v13.1.0u
+versionCode=32
 author=CrystalCommunication
-description=Systemlessly replaces emoji font with Twemoji.
+description=Use the Twitter emojis (aka Twemoji) as the Android system emojis with Magisk! (now w/ integrated updater for Magisk 24+!)
+updateJson=https://raw.githubusercontent.com/CrystalCommunication/Twemoji-systemless-updates/main/latest.json
