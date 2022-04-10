@@ -1,7 +1,7 @@
 id=Twemoji-systemless
 name=Twemoji
 version=v14.0.2
-versionCode=33
+versionCode=40
 author=CrystalCommunication
 description=Use the Twitter emojis (aka Twemoji) as the Android system emojis with Magisk! (now w/ integrated updater for Magisk 24+!)
 updateJson=https://raw.githubusercontent.com/CrystalCommunication/Twemoji-systemless-updates/main/latest.json
