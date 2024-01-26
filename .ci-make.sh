@@ -35,7 +35,7 @@ case "$1" in
 		;;
 	"emoji-build")
 		cd noto-emoji
-		make EMOJI=Twemoji EMOJI_SRC_DIR=../twemoji/assets/128x128 FLAGS= BODY_DIMENSIONS=136x128
+		make -j 12 EMOJI=Twemoji EMOJI_SRC_DIR=../twemoji/assets/128x128 FLAGS= BODY_DIMENSIONS=136x128
 		;;
 	"zip-deps")
 		apt update
