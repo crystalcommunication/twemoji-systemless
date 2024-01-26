@@ -19,10 +19,10 @@ steps:
     environment:
       - DEBIAN_FRONTEND=noninteractive
     commands:
-      - ./emoji-make.sh debian-deps
-      - ./emoji-make.sh noto-patch
-      - ./emoji-make.sh twemoji-prep
-      - ./emoji-make.sh emoji-build
+      - ./.ci-make.sh debian-deps
+      - ./.ci-make.sh noto-patch
+      - ./.ci-make.sh twemoji-prep
+      - ./.ci-make.sh emoji-build
       - ls -al
 
   magisk-build:
@@ -30,9 +30,9 @@ steps:
     environment:
       - DEBIAN_FRONTEND=noninteractive
     commands:
-      - ./emoji-make.sh zip-deps
-      - ./emoji-make.sh magisk-prep
-      - ./emoji-make.sh magisk-zip
+      - ./.ci-make.sh zip-deps
+      - ./.ci-make.sh magisk-prep
+      - ./.ci-make.sh magisk-zip
 
   upload-crystalcommit:
     image: woodpeckerci/plugin-gitea-release
