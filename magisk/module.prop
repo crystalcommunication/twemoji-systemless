@@ -1,6 +1,6 @@
 id=Twemoji-systemless
-name=Twemoji
-version=v15.0.3
+name=Twemoji (prerelease)
+version=v15.0.3a
 versionCode=50
 author=crystal
 description=Use the Twitter emojis (aka Twemoji, jdecked fork) as the Android system emojis with Magisk!

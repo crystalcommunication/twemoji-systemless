@@ -20,6 +20,7 @@ steps:
       - DEBIAN_FRONTEND=noninteractive
     commands:
       - ./.ci-make.sh debian-deps
+      - ./.ci-make.sh twemoji-png128
       - ./.ci-make.sh noto-patch
       - ./.ci-make.sh twemoji-prep
       - ./.ci-make.sh emoji-build
