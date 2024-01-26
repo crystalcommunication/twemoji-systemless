@@ -1,0 +1,9 @@
+[submodule "twemoji"]
+	path = twemoji
+	url = https://sc.cryxtal.org/mirror/twemoji.git
+[submodule "noto-emoji"]
+	path = noto-emoji
+	url = https://sc.cryxtal.org/mirror/noto-emoji
+[submodule "twemoji-fonts"]
+	path = twemoji-fonts
+	url = https://sc.cryxtal.org/mirror/twemoji-fonts

@@ -1,0 +1,48 @@
+labels:
+  platform: linux/amd64
+
+when:
+  event: [ push, tag ]
+
+variables:
+  - &emoji_build_image 'debian:bookworm'
+
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: true
+
+steps:
+  emoji-build:
+    image: *emoji_build_image
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    commands:
+      - ./emoji-make.sh debian-deps
+      - ./emoji-make.sh noto-patch
+      - ./emoji-make.sh twemoji-prep
+      - ./emoji-make.sh emoji-build
+      - ls -al
+
+  magisk-build:
+    image: *emoji_build_image
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    commands:
+      - ./emoji-make.sh zip-deps
+      - ./emoji-make.sh magisk-prep
+      - ./emoji-make.sh magisk-zip
+
+  upload-crystalcommit:
+    image: woodpeckerci/plugin-gitea-release
+    settings:
+      base_url: https://sc.cryxtal.org
+      files:
+        - "magisk-twemoji-*.zip"
+      api_key:
+        from_secret: sc_api_key
+      prerelease: true
+      skip_verify: true
+    when:
+      event: [ tag ]
