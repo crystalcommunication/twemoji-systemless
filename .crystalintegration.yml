@@ -15,13 +15,21 @@ clone:
       recursive: true
 
 steps:
+  convert-png:
+    image: *emoji_build_image
+    commands:
+      - ./.ci-make.sh twemoji-png128
+
+  build-prep:
+    image: *emoji_build_image
+    commands:
+      - ./.ci-make.sh noto-patch
+      - ./.ci-make.sh twemoji-prep
+
   emoji-build:
     image: *emoji_build_image
     commands:
       - ./.ci-make.sh debian-add_vs_cmap
-      - ./.ci-make.sh twemoji-png128
-      - ./.ci-make.sh noto-patch
-      - ./.ci-make.sh twemoji-prep
       - ./.ci-make.sh emoji-build
 
   magisk-build:
