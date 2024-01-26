@@ -12,7 +12,7 @@ case "$1" in
 		mkdir 128x128
 		cd svg
 		for svg in *.svg; do
-			inkscape -w 128 -h 128 $svg -o ${svg%.svg}.png
+			inkscape -w 128 -h 128 $svg -o ../128x128/${svg%.svg}.png
 		done
 		;;
 	"noto-patch")
