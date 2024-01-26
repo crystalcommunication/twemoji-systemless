@@ -5,7 +5,8 @@ when:
   event: [ push, tag ]
 
 variables:
-  - &emoji_build_image 'debian:bookworm'
+  - &emoji_build_image 'sc.cryxtal.org/ci-img/emoji-build:bookworm'
+  - &sha256_image 'sc.cryxtal.org/ci-img/git-curl-jq:latest'
 
 clone:
   git:
@@ -16,27 +17,21 @@ clone:
 steps:
   emoji-build:
     image: *emoji_build_image
-    environment:
-      - DEBIAN_FRONTEND=noninteractive
     commands:
-      - ./.ci-make.sh debian-deps
+      - ./.ci-make.sh debian-add_vs_cmap
       - ./.ci-make.sh twemoji-png128
       - ./.ci-make.sh noto-patch
       - ./.ci-make.sh twemoji-prep
       - ./.ci-make.sh emoji-build
-      - ls -al
 
   magisk-build:
     image: *emoji_build_image
-    environment:
-      - DEBIAN_FRONTEND=noninteractive
     commands:
-      - ./.ci-make.sh zip-deps
       - ./.ci-make.sh magisk-prep
       - ./.ci-make.sh magisk-zip
 
   gen-sha256:
-    image: sc.cryxtal.org/ci-img/git-curl-jq:latest
+    image: *sha256_image
     commands:
       - ./.ci-sha256.sh magisk-twemoji
 

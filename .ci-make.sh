@@ -7,6 +7,9 @@ case "$1" in
 		apt install -y make graphicsmagick libcairo2-dev python3-nototools pngquant zopfli rsync fonttools patch which sudo inkscape
 		ln -s $(which add_vs_cmap) $(which add_vs_cmap).py
 		;;
+	"debian-add_vs_cmap")
+		ln -s $(which add_vs_cmap) $(which add_vs_cmap).py
+		;;
 	"twemoji-png128")
 		cd twemoji/assets
 		mkdir 128x128
