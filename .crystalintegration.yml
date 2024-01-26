@@ -34,12 +34,18 @@ steps:
       - ./.ci-make.sh magisk-prep
       - ./.ci-make.sh magisk-zip
 
+  gen-sha256:
+    image: sc.cryxtal.org/ci-img/git-curl-jq:latest
+    commands:
+      - ./.ci-sha256.sh magisk-twemoji
+
   upload-crystalcommit:
     image: woodpeckerci/plugin-gitea-release
     settings:
       base_url: https://sc.cryxtal.org
       files:
         - "magisk-twemoji-*.zip"
+        - "magisk-twemoji-*.zip.sha256"
       api_key:
         from_secret: sc_api_key
       prerelease: true
