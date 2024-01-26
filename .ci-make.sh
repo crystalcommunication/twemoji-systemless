@@ -37,7 +37,8 @@ case "$1" in
 		cp ../noto-emoji/Twemoji.ttf system/fonts/NotoColorEmoji.ttf
 		;;
 	"magisk-zip")
-		zip -r magisk-twemoji-$CI_COMMIT_TAG.zip magisk/*
+		cd magisk
+		zip -r ../magisk-twemoji-$CI_COMMIT_TAG.zip *
 		;;
 	*)
 		echo "ERR! INVALID SUBCOMMAND: \"$1\""

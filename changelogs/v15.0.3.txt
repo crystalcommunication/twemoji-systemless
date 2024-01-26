@@ -1,0 +1,1 @@
+This update introduces jdecked's Twemoji fork, including support for Unicode 15.0 with 20+ new emojis.
