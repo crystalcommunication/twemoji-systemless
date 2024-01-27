@@ -52,7 +52,7 @@ steps:
         - "magisk-twemoji-*.zip.sha256"
       api_key:
         from_secret: sc_api_key
-      prerelease: true
+      prerelease: false
       skip_verify: true
     when:
       event: [ tag ]

@@ -1,0 +1,8 @@
+This update introduces jdecked's Twemoji fork, including support for Unicode 15.0 with 20+ new emojis.
+
+~ a patch ~
+
+- increase emoji resolution to 128x128
+- higher res emojis generated from Twemoji svgs
+
+# TODO: Add notice about resolution change, consider release channels?
