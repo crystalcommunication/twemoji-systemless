@@ -15,7 +15,7 @@ case "$1" in
 		mkdir 128x128
 		cd svg
 		for svg in *.svg; do
-			inkscape -w 128 -h 128 $svg -o ../128x128/${svg%.svg}.png &
+			inkscape -w 128 -h 128 $svg -o ../128x128/${svg%.svg}.png 2>/dev/null &
 			if [[ $(jobs -r -p | wc -l) -ge 12 ]]; then wait -n; fi
 		done
 		wait
