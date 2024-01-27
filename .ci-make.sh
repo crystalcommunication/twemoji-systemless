@@ -14,8 +14,14 @@ case "$1" in
 		cd twemoji/assets
 		mkdir 128x128
 		cd svg
+		INKSCAPE_THREADS=0
 		for svg in *.svg; do
-			inkscape -w 128 -h 128 $svg -o ../128x128/${svg%.svg}.png
+			inkscape -w 128 -h 128 $svg -o ../128x128/${svg%.svg}.png &
+			if [ "$INKSCAPE_THREADS" = "12" ];then
+				wait
+				INKSCAPE_THREADS=0
+			fi
+				INKSCAPE_THREADS=$((INKSCAPE_THREADS+1))
 		done
 		;;
 	"noto-patch")
