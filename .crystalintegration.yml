@@ -12,6 +12,7 @@ clone:
   git:
     image: woodpeckerci/plugin-git
     settings:
+      depth: 3
       recursive: true
 
 steps:
