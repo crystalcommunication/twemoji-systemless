@@ -3,5 +3,5 @@ name=Twemoji
 version=v15.0.3a
 versionCode=51
 author=crystal
-description=Use the Twitter emojis (aka Twemoji, jdecked fork) as the Android system emojis with Magisk!
+description=Use Twemoji (jdecked fork) as the Android system emojis with Magisk!
 updateJson=https://sc.cryxtal.org/api/v1/repos/crystal/magisk-updates/raw/twemoji.json
